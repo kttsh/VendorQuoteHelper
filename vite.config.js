@@ -4,9 +4,9 @@ import react from '@vitejs/plugin-react';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // Ensure Vite correctly serves the app on port 5000
+  // Ensure Vite correctly serves the app on port 3000
   server: {
-    port: 5000,
+    port: 3000,
     strictPort: true,
     host: '0.0.0.0',
     // Allow specific hosts to access the development server
