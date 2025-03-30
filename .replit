@@ -1,0 +1,56 @@
+modules = ["nodejs-20", "python-3.11"]
+
+[nix]
+channel = "stable-24_05"
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Server"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "tauri-dev"
+
+[[workflows.workflow]]
+name = "Server"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npx vite --port 5000"
+waitForPort = 5000
+
+[[workflows.workflow]]
+name = "tauri-dev"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd src-tauri && cargo run"
+
+[deployment]
+run = ["sh", "-c", "npx vite --port 5000"]
+
+[[ports]]
+localPort = 5000
+externalPort = 80

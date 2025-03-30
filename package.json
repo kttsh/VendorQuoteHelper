@@ -1,0 +1,26 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@tauri-apps/api": "^2.4.0",
+    "@tauri-apps/cli": "^2.4.0",
+    "@types/react": "^19.0.12",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "docx": "^9.3.0",
+    "exceljs": "^4.4.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-hook-form": "^7.55.0",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.3"
+  }
+}
